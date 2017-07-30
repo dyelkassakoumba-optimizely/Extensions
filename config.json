@@ -1,0 +1,40 @@
+{
+  "plugin_type": "analytics_integration",
+  "name": "Universal Analytics Debugger",
+  "form_schema": [
+    {
+      "default_value": "3",
+      "field_type": "dropdown",
+      "name": "customDimensionSlot",
+      "label": "Custom Dimension",
+      "options": {
+        "choices": [
+          {
+            "value": "1",
+            "label": "1"
+          },
+          {
+            "value": "2",
+            "label": "2"
+          },
+          {
+            "value": "3",
+            "label": "3"
+          },
+          {
+            "value": "4",
+            "label": "4"
+          },
+          {
+            "value": "5",
+            "label": "5"
+          }
+        ]
+      }
+    }
+  ],
+  "description": "",
+  "options": {
+    "track_layer_decision": "//Track that the user gets into the experiment\nwindow['optimizely'].push({\n  type: \"event\",\n  eventName: \"step1_ga_wait_success\"\n});\n\n//Define function for GA Tracking\nfunction fireOptlyGATracking() {\n\n  //Capture Decision info using getDecisionString API.\n  //getDecisionString Returns a string when bucketed or null when not bucketed.\n var dimensionValue = window.optimizely.get(\"state\").getDecisionString({campaignId: campaignId});\n \n  //Set GA Fields Object\n  var fieldsObject = { nonInteraction: true };\n fieldsObject['dimension' + extension.customDimensionSlot] = dimensionValue;\n \n  //If bucketed into anything, set dimension value to slot and send to GA\n \n  if (dimensionValue) {\n    ga('send', 'pageview');\n    ga('set', 'dimension' + extension.customDimensionSlot, dimensionValue);\n    ga('send', 'event', 'optimizely-custom', \"Assigned to Campaign\", fieldsObject);\n    window['optimizely'].push({\n  \t\ttype: \"event\",\n  \t\teventName: \"step3_ga_tracking_success\"\n\t\t});\n  }\n}\n\n// Initiate polling for GA object.\nvar count = 0;\nvar poll = setInterval(function(){ \n    count++;\n\n    if (count >= 10)\n    {\n        clearInterval(poll);\n    }\n    if (typeof ga !== 'undefined')\n        {\n            fireOptlyGATracking();\n            clearInterval(poll);\n          \twindow['optimizely'].push({\n  \t\t\t\t\t\ttype: \"event\",\n  \t\t\t\t\t\teventName: \"step2_ga_ready\"\n\t\t\t\t\t\t});\n        }\n}, 25);\n"
+  }
+}
