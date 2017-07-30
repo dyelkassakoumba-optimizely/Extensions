@@ -20,5 +20,7 @@ This analytics integration allows you to enable troubleshooting custom events to
 When enough visitors have been included in the experiment the results page will contain the following information.
 
 % step1_ga_wait_success: Number of users for which the troubleshooting script ran.
+
 % step2_ga_ready: Number of users for which the GA object was defined
+
 % step3_ga_tracking_success: Number of users for which the event got sent successfully.
