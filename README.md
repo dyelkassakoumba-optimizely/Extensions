@@ -18,10 +18,10 @@ This analytics integration allows you to enable troubleshooting custom events to
 
 ## Settings
 
-Custom Dimension: GA Custom Dimension Slot.
-Custom Tracker Name: GA tracker name if you are not using the default GA tracker name.
-Polling Time: How long do you want to wait for the GA object.
-Debug mode: Set on or of the debug events that will be pushed to your debug page.
+*Custom Dimension: GA Custom Dimension Slot.\n
+*Custom Tracker Name: GA tracker name if you are not using the default GA tracker name.\n
+*Polling Time: How long do you want to wait for the GA object.\n
+*Debug mode: Set on or of the debug events that will be pushed to your debug page.\n
 
 ## Reading the results
 
