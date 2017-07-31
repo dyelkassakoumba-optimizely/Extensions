@@ -6,10 +6,11 @@ This analytics integration allows you to enable troubleshooting custom events to
 
 1.	Use config.json to import this custom analytics integration.
 
-2.	Create 3 custom events within your project using the folowing API names:
+2.	Create 4 custom events within your project using the folowing API names:
 	-	step1_ga_wait_success
 	-	step2_ga_ready
 	-	step3_ga_tracking_success
+	-	step4_ga_timeout
 
 4. Use the above custom event to define the three troubleshooting metrics within your metrics builder for the experiment you want to troubleshoot.
 
@@ -19,8 +20,10 @@ This analytics integration allows you to enable troubleshooting custom events to
 
 When enough visitors have been included in the experiment the results page will contain the following information.
 
-% step1_ga_wait_success: Number of users for which the troubleshooting script ran.
+% step1_ga_wait_success: Number of visitors for which the troubleshooting script ran.
 
-% step2_ga_ready: Number of users for which the GA object was defined
+% step2_ga_ready: Number of visitors for which the GA object was defined
 
-% step3_ga_tracking_success: Number of users for which the event got sent successfully.
+% step3_ga_tracking_success: Number of visitors for which the event got sent successfully.
+
+% step4_ga_timeout: Number of visitors for which the GA object was not loaded in time.
