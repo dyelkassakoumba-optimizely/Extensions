@@ -16,6 +16,13 @@ This analytics integration allows you to enable troubleshooting custom events to
 
 5. Enable this integration for the experiment you would like to troubleshoot.
 
+## Settings
+
+Custom Dimension: GA Custom Dimension Slot.
+Custom Tracker Name: GA tracker name if you are not using the default GA tracker name.
+Polling Time: How long do you want to wait for the GA object.
+Debug mode: Set on or of the debug events that will be pushed to your debug page.
+
 ## Reading the results
 
 When enough visitors have been included in the experiment the results page will contain the following information.
@@ -27,3 +34,4 @@ When enough visitors have been included in the experiment the results page will 
 % step3_ga_tracking_success: Number of visitors for which the event got sent successfully.
 
 % step4_ga_timeout: Number of visitors for which the GA object was not loaded in time.
+
