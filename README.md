@@ -1,6 +1,6 @@
 ## Universal Analytics Debugger
 
-This analytics integration allows you to enable troubleshooting custom events to identify potential reasons for discrepencies between Optimizely and Universal analytics.
+This analytics integration allows you to enable troubleshooting custom events in order to identify potential reasons for discrepencies between Optimizely and Universal analytics.
 
 ## Setup
 
@@ -18,7 +18,7 @@ This analytics integration allows you to enable troubleshooting custom events to
 
 ## Settings
 
-* **Custom Dimension**: GA Custom Dimension Slot.
+* **Custom Dimension**: GA Custom Dimension Slot. (You will need to edit the available cd values in the case 15 or 16 are available for you in Google analytics)
 * **Custom Tracker Name**: GA tracker name if you are not using the default GA tracker name.
 * **Polling Time**: How long do you want to wait for the GA object.
 * **Debug mode**: Set on or of the debug events that will be pushed to your debug page.
